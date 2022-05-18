@@ -137,7 +137,7 @@
 #define BAR_STATUS2D_PATCH 1
 
 /* Supplementary patch should you want to disable alpha for the status2d section */
-#define BAR_STATUS2D_NO_ALPHA_PATCH 0
+#define BAR_STATUS2D_NO_ALPHA_PATCH 1
 
 /* Addition to the status2d patch that allows the use of terminal colors (color0 through color15)
  * from xrdb in the status, allowing programs like pywal to change statusbar colors.
@@ -401,7 +401,7 @@
 /* This patch adds configuration options for horizontal and vertical padding in the status bar.
  * https://dwm.suckless.org/patches/statuspadding/
  */
-#define BAR_STATUSPADDING_PATCH 0
+#define BAR_STATUSPADDING_PATCH 1
 
 /* This patch adds the ability for dwm to read colors from the linux virtual console.
  *    /sys/module/vt/parameters/default_{red,grn,blu}

@@ -12,7 +12,7 @@ static const char *downbrightness[]   = { "sh", ".dwm/master.sh", "brightdec", N
 /* appearance */
 #if ROUNDED_CORNERS_PATCH
 static const unsigned int borderpx       = 0;   /* border pixel of windows */
-static const int corner_radius           = 10;
+static const int corner_radius           = 4;
 #else
 static const unsigned int borderpx       = 1;   /* border pixel of windows */
 #endif // ROUNDED_CORNERS_PATCH
@@ -90,8 +90,8 @@ static const int statusmon               = 0;
 static const int statusmon               = 'A';
 #endif // BAR_STATUSALLMONS_PATCH | BAR_STATICSTATUS_PATCH
 #if BAR_STATUSPADDING_PATCH
-static const int horizpadbar             = 2;   /* horizontal padding for statusbar */
-static const int vertpadbar              = 0;   /* vertical padding for statusbar */
+static const int horizpadbar             = 10;   /* horizontal padding for statusbar */
+static const int vertpadbar              = 10;   /* vertical padding for statusbar */
 #endif // BAR_STATUSPADDING_PATCH
 #if BAR_STATUSBUTTON_PATCH
 static const char buttonbar[]            = "<O>";
@@ -136,9 +136,9 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "monospace:size=12", "fontawesome:size-12" };
+static const char *fonts[]               = { "monospace:size=14", "fontawesome:size=14" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "monospace:size=12";
+static const char dmenufont[]            = "monospace:size=14";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -448,6 +448,7 @@ static const Rule rules[] = {
 	RULE(.title = "Calculator", .isfloating = 1)
 	RULE(.title = "MEGAsync", .isfloating = 1)
 	RULE(.title = "rofi", .isfloating = 1)
+  RULE(.class = "tutanota-desktop", .tags = 1 << 4)
 	#if SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	#endif // SCRATCHPADS_PATCH
@@ -602,7 +603,7 @@ static const int scrollargs[][2] = {
 static const Layout layouts[] = {
 	/* symbol     arrange function, { nmaster, nstack, layout, master axis, stack axis, secondary stack axis, symbol func } */
 	{ "",         flextile,         { -1, -1, SPLIT_VERTICAL, TOP_TO_BOTTOM, TOP_TO_BOTTOM, 0, NULL } }, // default tile layout
- 	{ "><>",      NULL,             {0} },    /* no layout function means floating behavior */
+ 	{ "ᶛ",      NULL,             {0} },    /* no layout function means floating behavior */
 	{ "ₘ",        flextile,         { -1, -1, NO_SPLIT, MONOCLE, MONOCLE, 0, NULL } }, // monocle
 	{ "|||",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, 0, NULL } }, // columns (col) layout
 	{ ">M>",      flextile,         { -1, -1, FLOATING_MASTER, LEFT_TO_RIGHT, LEFT_TO_RIGHT, 0, NULL } }, // floating master
@@ -667,7 +668,7 @@ static const Layout layouts[] = {
 	#if TILE_LAYOUT
 	{ "",      tile },    /* first entry is default */
 	#endif
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "ᶛ",      NULL },    /* no layout function means floating behavior */
 	#if MONOCLE_LAYOUT
 	{ "ₘ",      monocle },
 	#endif
